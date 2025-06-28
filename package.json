@@ -1,6 +1,6 @@
 {
   "name": "@softeria/ms-365-mcp-server",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "description": "Microsoft 365 MCP Server",
   "type": "module",
   "main": "dist/index.js",
