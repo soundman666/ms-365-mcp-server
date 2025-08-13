@@ -148,6 +148,30 @@ claude mcp add ms365 -- npx -y @softeria/ms-365-mcp-server
 For other interfaces that support MCPs, please refer to their respective documentation for the correct
 integration method.
 
+### Local Development
+
+For local development or testing:
+
+```bash
+# From the project directory
+claude mcp add ms -- npx tsx src/index.ts --org-mode
+```
+
+Or configure Claude Desktop manually:
+
+```json
+{
+  "mcpServers": {
+    "ms365": {
+      "command": "node",
+      "args": ["/absolute/path/to/ms-365-mcp-server/dist/index.js", "--org-mode"]
+    }
+  }
+}
+```
+
+> **Note**: Run `npm run build` after code changes to update the `dist/` folder.
+
 ### Authentication
 
 > ⚠️ You must authenticate before using tools.

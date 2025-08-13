@@ -35,7 +35,10 @@ export function registerAuthTools(server: McpServer, authManager: AuthManager): 
           content: [
             {
               type: 'text',
-              text,
+              text: JSON.stringify({
+                error: 'device_code_required',
+                message: text.trim(),
+              }),
             },
           ],
         };

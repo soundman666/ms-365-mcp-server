@@ -73,7 +73,12 @@ describe('Auth Tools', () => {
 
       expect(authManager.testLogin).not.toHaveBeenCalled();
       expect(authManager.acquireTokenByDeviceCode).toHaveBeenCalled();
-      expect(result.content[0].text).toBe('Login instructions');
+      expect(result.content[0].text).toBe(
+        JSON.stringify({
+          error: 'device_code_required',
+          message: 'Login instructions',
+        })
+      );
     });
 
     it('should proceed with login when not already logged in', async () => {
@@ -93,7 +98,12 @@ describe('Auth Tools', () => {
 
       expect(authManager.testLogin).toHaveBeenCalled();
       expect(authManager.acquireTokenByDeviceCode).toHaveBeenCalled();
-      expect(result.content[0].text).toBe('Login instructions');
+      expect(result.content[0].text).toBe(
+        JSON.stringify({
+          error: 'device_code_required',
+          message: 'Login instructions',
+        })
+      );
     });
   });
 });
