@@ -143,6 +143,7 @@ export function registerGraphTools(
           const queryParams: Record<string, string> = {};
           const headers: Record<string, string> = {};
           let body: unknown = null;
+
           for (let [paramName, paramValue] of Object.entries(params)) {
             // Skip pagination control parameter - it's not part of the Microsoft Graph API - I think 🤷
             if (paramName === 'fetchAllPages') {
